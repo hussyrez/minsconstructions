@@ -16,14 +16,65 @@
   background-color: var(--mc-dark);
   color: #fff;
   padding: 5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 0;
 }
 
-#gallery .card {
+.hero-box {
+  max-width: 550px;
+  border: 2px solid #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.hero-services li {
+  font-size: 1.05rem;
+  padding: 0.3rem 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-outline-light:hover {
+  color: var(--mc-dark);
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  background-color: #fff;
+}
+
+.parallax-section {
+  line-height: 0;
+}
+
+.parallax-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.service-card {
   transition: transform 0.2s ease;
 }
 
-#gallery .card:hover {
+.service-card:hover {
   transform: translateY(-4px);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--mc-primary);
+  color: #fff;
+  margin: 0 auto;
+}
+
+.gallery-reel {
+  max-width: 600px;
 }
 
 footer a {

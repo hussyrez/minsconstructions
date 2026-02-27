@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (!container) return;
 
   try {
-    const response = await fetch('photos/manifest.json');
+    const response = await fetch('photos/gallery/manifest.json');
     if (!response.ok) throw new Error('Failed to load gallery');
     const jobs = await response.json();
 
@@ -12,33 +12,48 @@ document.addEventListener('DOMContentLoaded', async () => {
       return;
     }
 
-    container.innerHTML = '';
+    let current = 0;
 
-    jobs.forEach(job => {
-      const col = document.createElement('div');
-      col.className = 'col-12 col-md-6 col-lg-4 mb-4';
-      col.innerHTML = `
-        <div class="card h-100 shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">${job.suburb}</h5>
-            <p class="card-text text-muted small">Job #${job.jobNo} &mdash; ${job.builder}</p>
-            <div class="row g-2">
-              <div class="col-6">
-                <p class="text-center mb-1 small fw-bold text-danger">Before</p>
-                <img src="photos/${job.before}" alt="Before rendering - ${job.suburb}"
-                     class="img-fluid rounded" loading="lazy">
-              </div>
-              <div class="col-6">
-                <p class="text-center mb-1 small fw-bold text-success">After</p>
-                <img src="photos/${job.after}" alt="After rendering - ${job.suburb}"
-                     class="img-fluid rounded" loading="lazy">
-              </div>
-            </div>
+    function render() {
+      const job = jobs[current];
+      const counter = `${current + 1} / ${jobs.length}`;
+      container.innerHTML = `
+        <div class="gallery-reel mx-auto">
+          <div class="text-center mb-3">
+            <h5 class="mb-1">${job.suburb}</h5>
+            ${job.builder ? `<p class="text-muted small mb-0">Job #${job.jobNo} &mdash; ${job.builder}</p>` : ''}
+          </div>
+          <div class="mb-2">
+            <p class="text-center mb-1 small fw-bold text-danger">Before</p>
+            <img src="photos/gallery/${job.before}" alt="Before rendering - ${job.suburb}"
+                 class="img-fluid rounded w-100">
+          </div>
+          <div class="mb-3">
+            <p class="text-center mb-1 small fw-bold text-success">After</p>
+            <img src="photos/gallery/${job.after}" alt="After rendering - ${job.suburb}"
+                 class="img-fluid rounded w-100">
+          </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <button class="btn btn-outline-secondary" id="gallery-prev" ${current === 0 ? 'disabled' : ''}>
+              &#8592; Prev
+            </button>
+            <span class="text-muted small">${counter}</span>
+            <button class="btn btn-outline-secondary" id="gallery-next" ${current === jobs.length - 1 ? 'disabled' : ''}>
+              Next &#8594;
+            </button>
           </div>
         </div>
       `;
-      container.appendChild(col);
-    });
+
+      document.getElementById('gallery-prev').addEventListener('click', () => {
+        if (current > 0) { current--; render(); }
+      });
+      document.getElementById('gallery-next').addEventListener('click', () => {
+        if (current < jobs.length - 1) { current++; render(); }
+      });
+    }
+
+    render();
   } catch (err) {
     container.innerHTML = '<p class="text-muted text-center">Gallery is currently unavailable.</p>';
   }
