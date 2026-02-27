@@ -1,0 +1,23 @@
+[
+  {
+    "jobNo": "1",
+    "suburb": "Cranbourne",
+    "builder": "Smith Homes",
+    "before": "1_Cranbourne_SmithHomes_before.jpg",
+    "after": "1_Cranbourne_SmithHomes_after.jpg"
+  },
+  {
+    "jobNo": "2",
+    "suburb": "Berwick",
+    "builder": "Premier Builds",
+    "before": "2_Berwick_PremierBuilds_before.jpg",
+    "after": "2_Berwick_PremierBuilds_after.jpg"
+  },
+  {
+    "jobNo": "3",
+    "suburb": "Narre Warren",
+    "builder": "ABC Homes",
+    "before": "3_NarreWarren_ABCHomes_before.jpg",
+    "after": "3_NarreWarren_ABCHomes_after.jpg"
+  }
+]

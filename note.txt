@@ -1,0 +1,10 @@
+Before Going Live
+==================
+
+1. Add actual before/after photos to photos/ and update photos/manifest.json
+2. Get a free Web3Forms access key at web3forms.com (just enter your email) and replace YOUR_ACCESS_KEY_HERE in contact.html
+3. Update the placeholder phone number (0400 000 000) in contact.html
+4. Update the placeholder email (info@minsconstructions.com.au) in contact.html
+5. Add a logo image to images/ (optional)
+6. Add a favicon to images/ (optional)
+7. Enable GitHub Pages: repo Settings → Pages → Source: "Deploy from a branch" → Branch: main / (root)
