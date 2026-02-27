@@ -37,64 +37,121 @@
     </div>
   </nav>
 
+  <!-- Hero heading -->
+  <section class="contact-hero text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold mb-3">Get In Touch</h1>
+      <p class="lead mb-0">We'd love to hear about your project. Reach out for a free, no-obligation rendering quote.</p>
+    </div>
+  </section>
+
+  <!-- Contact form + details -->
   <section class="py-5">
     <div class="container">
-      <h1 class="mb-4">Contact Mins Constructions &mdash; Melbourne Rendering Service</h1>
       <div class="row g-5">
 
-        <div class="col-lg-5">
-          <h2 class="h5">Get in Touch</h2>
-          <ul class="list-unstyled">
-            <li class="mb-3">
-              <strong>Phone:</strong><br>
-              <a href="tel:0400000000">0400 000 000</a>
-            </li>
-            <li class="mb-3">
-              <strong>Email:</strong><br>
-              <a href="mailto:info@minsconstructions.com.au">info@minsconstructions.com.au</a>
-            </li>
-            <li class="mb-3">
-              <strong>Service Area:</strong><br>
-              South East Melbourne &amp; surrounding suburbs
-            </li>
-            <li class="mb-3">
-              <strong>Hours:</strong><br>
-              Mon&ndash;Fri 7:00am &ndash; 5:00pm<br>
-              Sat by appointment
-            </li>
-          </ul>
+        <!-- Form (left) -->
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h2 class="h4 mb-4">Request a Free Rendering Quote</h2>
+              <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="checkbox" name="botcheck" class="d-none" style="display:none">
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone" name="phone">
+                  </div>
+                </div>
+                <div class="mb-3 mt-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="suburb" class="form-label">Suburb</label>
+                  <input type="text" class="form-control" id="suburb" name="suburb">
+                </div>
+                <div class="mb-3">
+                  <label for="service" class="form-label">Service Required</label>
+                  <select class="form-select" id="service" name="service">
+                    <option value="" selected>Select a service...</option>
+                    <option value="Cement Rendering">Cement Rendering</option>
+                    <option value="Acrylic Rendering">Acrylic Rendering</option>
+                    <option value="Texture Coating">Texture Coating</option>
+                    <option value="Sand & Cement Repairs">Sand &amp; Cement Repairs</option>
+                    <option value="Render Cladding">Render Cladding</option>
+                    <option value="Wall Rendering">Wall Rendering</option>
+                    <option value="Hebel Rendering">Hebel Rendering</option>
+                    <option value="Float & Set">Float &amp; Set</option>
+                    <option value="Concrete Rendering">Concrete Rendering</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+                <div class="mb-4">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100">Send Message</button>
+              </form>
+            </div>
+          </div>
         </div>
 
-        <div class="col-lg-7">
-          <h2 class="h5">Request a Free Rendering Quote</h2>
-          <form action="https://api.web3forms.com/submit" method="POST">
-            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-            <input type="checkbox" name="botcheck" class="d-none" style="display:none">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" name="name" required>
+        <!-- Get in Touch (right) -->
+        <div class="col-lg-5">
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body p-4">
+              <h2 class="h4 mb-4">Contact Details</h2>
+              <div class="d-flex align-items-start mb-4">
+                <span class="contact-icon me-3">&#9742;</span>
+                <div>
+                  <h6 class="mb-1">Phone</h6>
+                  <a href="tel:0400000000" class="text-decoration-none">0400 000 000</a>
+                </div>
+              </div>
+              <div class="d-flex align-items-start mb-4">
+                <span class="contact-icon me-3">&#9993;</span>
+                <div>
+                  <h6 class="mb-1">Email</h6>
+                  <a href="mailto:info@minsconstructions.com.au" class="text-decoration-none">info@minsconstructions.com.au</a>
+                </div>
+              </div>
+              <div class="d-flex align-items-start mb-4">
+                <span class="contact-icon me-3">&#9872;</span>
+                <div>
+                  <h6 class="mb-1">Service Area</h6>
+                  <p class="text-muted mb-0">South East Melbourne &amp; surrounding suburbs</p>
+                </div>
+              </div>
+              <div class="d-flex align-items-start">
+                <span class="contact-icon me-3">&#9200;</span>
+                <div>
+                  <h6 class="mb-1">Business Hours</h6>
+                  <p class="text-muted mb-0">Mon&ndash;Fri 7:00am &ndash; 5:00pm<br>Sat by appointment</p>
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+
+          <div class="card border-0 shadow-sm bg-dark text-white">
+            <div class="card-body p-4 text-center">
+              <h5 class="mb-3">Prefer to Call?</h5>
+              <p class="small mb-3">Speak directly with our team about your rendering project.</p>
+              <a href="tel:0400000000" class="btn btn-outline-light btn-lg w-100">Call Now</a>
             </div>
-            <div class="mb-3">
-              <label for="phone" class="form-label">Phone</label>
-              <input type="tel" class="form-control" id="phone" name="phone">
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-  <footer class="bg-dark text-light py-4 mt-5">
+  <footer class="bg-dark text-light py-4">
     <div class="container text-center">
       <p class="mb-1">&copy; 2026 Mins Constructions. All rights reserved.</p>
       <p class="mb-0 small text-secondary">Melbourne Rendering Service &mdash; Licenced Renderers in South East Melbourne</p>
