@@ -15,7 +15,7 @@
 .hero {
   background-color: var(--mc-dark);
   color: #fff;
-  padding: 5rem 0;
+  padding: 5rem 0 11rem;
   position: sticky;
   top: 0;
   z-index: 0;
