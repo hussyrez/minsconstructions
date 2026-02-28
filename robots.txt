@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://YOUR_USERNAME.github.io/minscons/sitemap.xml
+Sitemap: https://minsconstructions.com.au/sitemap.xml
